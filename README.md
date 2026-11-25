@@ -16,7 +16,7 @@
   
 <div align="center">
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=50&pause=1000&color=1BAFBAFF&center=true&width=910&height=100&lines=HELLO+THIS+IS+ISAAC-MD;MULTI+DEVICE+WHATSAPP+BOT;SCRIPTED+BY+ISAAC+TECH;FORK+AND+STAR+THE+REPO" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=50&pause=1000&color=1BAFBAFF&center=true&width=910&height=100&lines=HELLO+THIS+IS+JUNIOR -MD;MULTI+DEVICE+WHATSAPP+BOT;SCRIPTED+BY+JUNIOR+TECH;FORK+AND+STAR+THE+REPO" alt="Typing SVG" />
   </a>
   
   
@@ -26,7 +26,7 @@
   
 ## ` Fork this repo`
 <p align="centre">
-<a href="https://github.com/kingplayboi/ISAAC/fork"><img src="https://img.shields.io/badge/Fork%20Create-purple?style=for-the-badge&logo=github" alt="FORK ISAAC-MD" width="160"></a>
+<a href="https://github.com/kingplayboi/ISAAC/fork"><img src="https://img.shields.io/badge/Fork%20Create-purple?style=for-the-badge&logo=github" alt="FORK JUNIOR-MD" width="160"></a>
 <p/>
 
   Linking/Pairing:
@@ -38,8 +38,8 @@
   
 ## ` Deploy to heroku `
 
- [![Deploy](https://img.shields.io/badge/Deploy-ISAAC-7c3aed?style=for-the-badge&logo=heroku&logoColor=white)
-](https://isaac-verify.vercel.app)
+ [![Deploy](https://img.shields.io/badge/Deploy-JUNIOR-7c3aed?style=for-the-badge&logo=heroku&logoColor=white)
+](https://JUNIOR-verify.vercel.app)
 
 
 
@@ -47,9 +47,9 @@
 
 <p align="center">
       <b>
-     Click below to Download latest ISAAC-md zip.
+     Click below to Download latest JUNIOR-md zip.
       <br><br>
-      <a href="https://github.com/kingplayboi/ISAAC/archive/refs/heads/main.zip">
+      <a href="https://github.com/kingplayboi/JUNIOR/archive/refs/heads/main.zip">
         <img src="https://img.shields.io/badge/download-zip-blue" alt="Download zip" width="200">
       </a>
     </p>
