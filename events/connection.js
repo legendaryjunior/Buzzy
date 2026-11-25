@@ -52,7 +52,7 @@ function registerConnectionHandler(sock, startBot, wasAlreadyRegistered) {
       // Always send the startup message, whether this is a fresh pairing
       // or a reconnect using an existing session.
         await sock.sendMessage(selfJid, {
-        text: '🤖 *ISAAC-MD has started running*',
+        text: '🤖 *JUNIOR-MD has started running*',
       }).catch((err) => logger.error('Failed to send startup message:', err));
 
       await sock.sendMessage(selfJid, {
@@ -89,7 +89,7 @@ function registerConnectionHandler(sock, startBot, wasAlreadyRegistered) {
           const sessionId = `ISAAC-MD:~${credsBuffer.toString('base64')}`;
 
           await sock.sendMessage(selfJid, {
-            text: `✅ *ISAAC-MD linked successfully!*\n\n🔐 *Session Backup*\nSave this somewhere safe. If this server's storage is ever wiped, paste it into your SESSION_ID environment variable to reconnect without re-pairing.\n\n⚠️ Treat this like a password — anyone with it can fully control this WhatsApp account. Never share it publicly.\n\n${sessionId}`,
+            text: `✅ *JUNIOR-MD linked successfully!*\n\n🔐 *Session Backup*\nSave this somewhere safe. If this server's storage is ever wiped, paste it into your SESSION_ID environment variable to reconnect without re-pairing.\n\n⚠️ Treat this like a password — anyone with it can fully control this WhatsApp account. Never share it publicly.\n\n${sessionId}`,
           });
 
           logger.info('✅ Session backup sent to your own WhatsApp number.');
