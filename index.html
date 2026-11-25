@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070910">
+  <meta name="description" content="Buzzy is a place to share little moments and find your next favorite thing.">
+  <title>Buzzy — little moments, on repeat</title>
+  <link rel="icon" type="image/svg+xml" href="buzzy-icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <section id="splash-screen" class="splash-screen" aria-label="Buzzy loading">
+    <img src="buzzy-icon.svg" alt="">
+    <strong>buzzy<span>.</span></strong>
+    <small>Little moments, on repeat</small>
+    <i></i>
+  </section>
+  <section id="auth-screen" class="auth-screen" aria-label="Buzzy account access" hidden></section>
+  <div class="app-shell" hidden>
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#" data-nav="home" aria-label="Buzzy home"><img class="brand-icon" src="buzzy-icon.svg" alt=""><span>buzzy<span class="brand-period">.</span></span></a>
+      <button class="sidebar-create" data-action="open-camera"><span>＋</span> Create a buzz</button>
+      <nav class="main-nav">
+        <button class="nav-link is-active" data-nav="home"><span class="nav-icon">⌂</span> For you</button>
+        <button class="nav-link" data-nav="following"><span class="nav-icon">♧</span> Following</button>
+        <button class="nav-link" data-nav="explore"><span class="nav-icon">⌕</span> Explore</button>
+        <button class="nav-link" data-nav="messages"><span class="nav-icon">✉</span> Messages <span class="nav-badge">2</span></button>
+      </nav>
+      <div class="sidebar-divider"></div>
+      <section class="sidebar-section">
+        <p class="side-label">YOUR BUZZ</p>
+        <button class="nav-link" data-nav="saved"><span class="nav-icon">♧</span> Saved loops</button>
+        <button class="nav-link" data-nav="profile"><span class="nav-icon">◉</span> Your profile</button>
+        <button class="nav-link" data-nav="studio"><span class="nav-icon">✳</span> Creator studio</button>
+        <button class="nav-link" data-nav="communities"><span class="nav-icon">♧</span> Groups & communities</button>
+        <button class="nav-link" data-nav="bulletin"><span class="nav-icon">▤</span> Bulletin board <span class="gate-dot">50k</span></button>
+        <button class="nav-link" data-nav="marketplace"><span class="nav-icon">◇</span> Creator marketplace</button>
+        <button class="nav-link" data-nav="games"><span class="nav-icon">♜</span> Gaming zone</button>
+        <button class="nav-link" data-nav="janet"><span class="nav-icon">✧</span> Janet AI</button>
+      </section>
+      <div class="sidebar-bottom">
+        <div class="sidebar-note"><span>✳</span><p><strong>A little inspiration</strong><br>is always one loop away.</p></div>
+        <button class="profile-chip" data-nav="profile">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=96&h=96&q=80" alt="">
+          <span><strong>Jamie Parker</strong><small>@jamiecreates</small></span><b>···</b>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="mobile-brand brand" data-nav="home" aria-label="Buzzy home"><img class="brand-icon" src="buzzy-icon.svg" alt=""><span>buzzy<span class="brand-period">.</span></span></button>
+        <label class="search-box"><span class="search-icon" aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Search creators, sounds, loops..." aria-label="Search"><kbd>⌘ K</kbd></label>
+        <div class="topbar-actions"><button class="icon-button notification-button" data-nav="inbox" aria-label="Notifications">♧<i></i></button><button class="topbar-create" data-action="open-camera"><span>＋</span> Create</button></div>
+      </header>
+
+      <div id="page-root" hidden></div>
+      <div class="content-layout">
+        <section class="feed-column" aria-label="Video feed">
+          <section class="stories-section" aria-label="Stories">
+            <div class="stories-heading"><span>Stories</span><small>little moments, gone in 24 hours</small></div>
+            <div id="stories-list" class="stories-list"></div>
+          </section>
+          <div class="welcome-row">
+            <div><p class="eyebrow"><span class="eyebrow-dot"></span> YOUR DAILY DOSE OF GOOD</p><h1>A little scroll,<br class="mobile-break"> a lot of <span>inspiration.</span></h1></div>
+            <div class="streak-pill"><span>✦</span> <strong>4</strong> day streak</div>
+          </div>
+          <div class="feed-tabs" role="tablist" aria-label="Feed">
+            <button class="feed-tab is-active" role="tab" aria-selected="true" data-feed="foryou">For you <span>✳</span></button>
+            <button class="feed-tab" role="tab" aria-selected="false" data-feed="following">Following</button><i class="tab-underline"></i>
+          </div>
+          <div id="feed" class="feed-list" aria-live="polite"></div>
+          <div id="empty-state" class="empty-state" hidden><span>✳</span><h2>No loops just yet</h2><p>Try another search or discover someone new.</p><button class="text-button" data-feed="foryou">Back to For you</button></div>
+        </section>
+
+        <aside class="discover-column" aria-label="Discover">
+          <section class="discover-heading"><div><p class="eyebrow">THE GOOD STUFF</p><h2>Today on Buzzy</h2></div><button class="icon-button refresh-button" aria-label="Refresh suggestions" data-action="refresh">↻</button></section>
+          <section class="trending-card"><div class="trending-photo"></div><div class="trending-overlay"></div><div class="trending-copy"><span class="trending-tag">TRENDING SOUND</span><h3>Sunday kind<br>of feeling</h3><p>♫ original audio · honey.wav</p><button class="sound-use-button" data-action="sound">Use this sound <span>↗</span></button></div><span class="trending-wave" aria-hidden="true">〰</span></section>
+          <section class="creators-section"><div class="section-title-row"><h3>Creators to know</h3><button class="subtle-link" data-nav="explore">See all</button></div><div id="suggested-creators" class="creator-list"></div></section>
+          <section class="topic-section"><div class="section-title-row"><h3>Find your thing</h3><span class="topic-spark">✳</span></div><div class="topic-pills"><button data-topic="slow living">☼ &nbsp; slow living</button><button data-topic="easy recipes">♨ &nbsp; easy recipes</button><button data-topic="outdoors">⌁ &nbsp; outdoors</button><button data-topic="creative">✳ &nbsp; creative</button></div></section>
+          <footer class="footer-links"><a href="#about" data-footer="About">About</a><a href="#guidelines" data-footer="Guidelines">Guidelines</a><a href="#privacy" data-footer="Privacy">Privacy</a><a href="#terms" data-footer="Terms">Terms</a><p>Made for the little moments. © 2026 Buzzy</p></footer>
+        </aside>
+      </div>
+    </main>
+  </div>
+  <nav class="mobile-nav" aria-label="Mobile navigation" hidden>
+    <button class="is-active" data-nav="home"><span><svg class="nav-icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg></span><small>Home</small></button>
+    <button data-nav="following"><span><svg class="nav-icon-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20v-1.5a6.5 6.5 0 0 1 13 0V20zM16 5a3.5 3.5 0 0 1 0 6.8M18 14a5.5 5.5 0 0 1 3.5 5.1V20h-4"/></svg></span><small>Friends</small></button>
+    <button class="mobile-add" data-action="open-camera" aria-label="Open camera"><span>＋</span></button>
+    <button data-nav="messages"><span><svg class="nav-icon-svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-9l-5 3v-3H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/></svg></span><small>Inbox</small></button>
+    <button data-nav="profile"><span><svg class="nav-icon-svg" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7.5" r="4"/><path d="M4 21v-1.5a8 8 0 0 1 16 0V21z"/></svg></span><small>Profile</small></button>
+  </nav>
+  <div id="modal-root"></div><div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
